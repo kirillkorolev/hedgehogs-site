@@ -1,0 +1,140 @@
+.about-us__slogan span {
+  display: none;
+}
+
+.about-us__slogan {
+  font-family: "Cormorant Infant", "Times New Roman", serif;
+  font-size: 50px;
+  line-height: 61px;
+  text-transform: uppercase;
+  color: $green;
+  margin-bottom: 10px;
+}
+
+.about-us__text {
+  color: $green;
+  margin-bottom: 34px;
+  line-height: 16px;
+}
+
+.about-us__button {
+  @include reset-button;
+
+  display: inline-block;
+  vertical-align: top;
+  text-align: center;
+  width: 328px;
+  box-shadow: 4px 4px 20px #c2ccca, -8px -8px 20px #ffffff;
+  border-radius: 40px;
+  background: $green;
+  color: $white;
+  font-weight: 700;
+  padding: 26px;
+  z-index: 3;
+  background-image: none;
+
+  margin-bottom: 200px;
+
+  transition-property: color, background-image;
+  transition-delay: 0.2s;
+  transition-duration: 0.7s;
+}
+
+.about-us__button:hover,
+.about-us__button:focus {
+  background-image: linear-gradient(90.68deg, #b0d3ce -2.41%, #ffedce 99.79%);
+  color: $dark-green;
+}
+
+.about-us {
+  padding-top: 290px;
+  background-image: radial-gradient(50% 50% at 50% 50%, rgba(180, 197, 194, 0.83) 0%, rgba(224, 225, 225, 0) 100%);
+  background-size: 1048px 1048px;
+  background-position: left -533px top -479px;
+  background-repeat: no-repeat;
+  background-color: $pale-grey;
+
+  position: relative;
+}
+
+.about-us::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  bottom: -185px;
+  width: 100%;
+  height: 188px;
+
+  background-repeat: no-repeat;
+  background-size: 100%;
+  background-image: url("../img/backgrounds/mask-desktop@1x.png");
+
+  @media (min-resolution: $retina-dpi), (min-resolution: $retina-dppx) {
+    background-image: url("../img/backgrounds/mask-desktop@2x.png");
+  }
+}
+
+.about-us__container {
+  width: 650px;
+  margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.about-us__title-icon {
+  display: block;
+}
+
+.about-us__title-image {
+  width: 444px;
+  height: 102px;
+  margin-bottom: 10px;
+}
+
+@media (max-width: $mobile-width) {
+  .about-us__container {
+    width: 100%;
+    padding-left: 6.25%;
+    padding-right: 6.25%;
+    align-items: flex-start;
+  }
+
+  .about-us__slogan {
+    font-size: 24px;
+    line-height: 29px;
+    margin-bottom: 2px;
+  }
+
+  .about-us {
+    padding-top: 85px;
+    background-image: none;
+  }
+
+  .about-us__text {
+    font-size: 12px;
+    line-height: 18px;
+    margin-bottom: 19px;
+  }
+
+  .about-us__button {
+    width: 100%;
+    padding: 21px;
+    margin-bottom: 88px;
+  }
+
+  .about-us__title-image {
+    width: 202px;
+    height: 44px;
+    margin-bottom: 8px;
+  }
+
+  .about-us::after {
+    background-image: url("../img/backgrounds/mask-mobile@1x.png");
+    bottom: -188px;
+
+    @media (min-resolution: $retina-dpi), (min-resolution: $retina-dppx) {
+      background-image: url("../img/backgrounds/mask-mobile@2x.png");
+    }
+  }
+}

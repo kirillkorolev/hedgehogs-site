@@ -1,0 +1,96 @@
+@keyframes fadeInDownBig {
+  from {
+    opacity: 0;
+    transform: translate3d(-50%, -2000px, 0);
+  }
+
+  to {
+    opacity: 1;
+    transform: translate3d(-50%, -50%, 0);
+  }
+}
+
+.popup {
+  width: 579px;
+  box-shadow: 4px 4px 20px #c2ccca;
+  border-radius: 10px;
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  background-color: $white;
+  z-index: 80;
+  padding: 51px 72px 55px 66px;
+  animation-name: fadeInDownBig;
+  animation-duration: 1s;
+
+  &--hidden {
+    display: none;
+  }
+}
+
+.popup__title {
+  font-family: "Cormorant Infant", "Times New Roman", serif;
+  font-weight: 700;
+  font-size: 24px;
+  line-height: 29px;
+  text-align: center;
+  text-transform: uppercase;
+  margin-bottom: 27px;
+}
+
+.popup__close-button {
+  @include reset-button;
+  @include add-transition-effect;
+
+  position: absolute;
+  width: 20px;
+  height: 20px;
+  top: 17px;
+  right: 22px;
+  transform: scale(1) translateX(0);
+}
+
+.popup__close-button::after,
+.popup__close-button::before {
+  content: "";
+  position: absolute;
+
+  width: 100%;
+  height: 2px;
+  background-color: $dark-green;
+  transition-property: all;
+  transition-delay: 0.2s;
+  transition-duration: 0.7s;
+  top: 8px;
+  right: -1px;
+}
+
+.popup__close-button::before {
+  transform: rotate(-45deg);
+}
+
+.popup__close-button::after {
+  transform: rotate(45deg);
+}
+
+.popup__close-button:hover,
+.popup__close-button:focus {
+  transform: scale(1.3) translateX(-3px);
+}
+
+.popup__close-button:hover::before,
+.popup__close-button:focus::before,
+.popup__close-button:hover::after,
+.popup__close-button:focus::after {
+  background-color: $black;
+}
+
+
+@media (max-width: $mobile-width) {
+  .popup {
+    width: 100%;
+    padding-left: 40px;
+    padding-right: 40px;
+  }
+}

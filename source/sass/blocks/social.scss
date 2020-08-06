@@ -1,0 +1,51 @@
+.social {
+  @include reset-list;
+
+  display: flex;
+  align-items: center;
+  margin-right: 5px;
+  margin-bottom: 5px;
+}
+
+.social__icon {
+  color: $white;
+  transition-property: all;
+  transition-delay: 0.2s;
+  transition-duration: 0.7s;
+}
+
+.social__item:not(:last-child) {
+  margin-right: 23px;
+  align-items: center;
+}
+
+.social__link {
+  color: $white;
+  display: block;
+  width: 30px;
+  height: 30px;
+}
+
+.social__link:hover .social__icon,
+.social__link:focus .social__icon {
+  color: $pale-orange;
+}
+
+.social__link:active {
+  opacity: 0.7;
+}
+
+@media (max-width: $mobile-width) {
+  .social {
+    flex-direction: column;
+    margin: 0;
+    position: absolute;
+    top: 8px;
+    right: 3px;
+  }
+
+  .social__item:not(:last-child) {
+    margin-right: 0;
+    margin-bottom: 22px;
+  }
+}
