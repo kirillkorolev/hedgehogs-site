@@ -169,6 +169,12 @@
     &--catalog {
       text-shadow: none;
     }
+
+    &--menu-opened {
+      .main-nav__catalog-menu {
+        display: none;
+      }
+    }
   }
 
   .main-nav__link {
@@ -177,6 +183,10 @@
   }
 
   .main-nav__item--catalog::before {
+    display: none;
+  }
+
+  .main-nav__catalog-menu {
     display: none;
   }
 }
